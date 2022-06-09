@@ -1,21 +1,36 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.IO;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace MacTep_9lpJIblkoB_2
 {
-    class ImageLoader
+    static class ImageLoader
     {
-       // qpoH_npuJIoJeHu9l = new ImageBrush();
-        //qpoH_npuJIoJeHu9l.ImageSource = new BitmapImage(new Uri(Environment.CurrentDirectory + @"\images\fon1.jpg"));
-           // this.Background = qpoH_npuJIoJeHu9l;
-        public void LoadBackgroundImage(string _imagePath, Control _control)
+        /// <summary>
+        /// заливает изображение в Background объекта Control (возвращает true при успешном
+        /// </summary>
+        /// <param name="_imagePath"></param>
+        /// <param name="_control"></param>
+        /// <returns></returns>
+        public static bool LoadBackgroundImage(string _imagePath, Control _control)
         {
-            if (!string.IsNullOrEmpty(_imagePath)) {
+            if (string.IsNullOrEmpty(_imagePath)) return false;
+            if (!Directory.Exists(_imagePath)) return false;
+
+            try
+            {
                 ImageBrush _image = new ImageBrush();
-                _image.ImageSource = new BitmapImage(new System.Uri(_imagePath));
+                _image.ImageSource = new BitmapImage(new Uri(_imagePath));
                 _control.Background = _image;
+                return true;
             }
+            catch
+            {
+                return false;
+            }
+           
         }
     }
 }
