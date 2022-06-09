@@ -20,9 +20,20 @@ namespace MacTep_9lpJIblkoB_2
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private string[] _imagesBackgroundMass;
+        private ConfigurationSingleton appConfig;
         public MainWindow()
         {
             InitializeComponent();
+            appConfig = ConfigurationSingleton.GetConfiguration();
+            _imagesBackgroundMass = ImageFinder.FindAllImages(appConfig.BackgroundDirectory);
+        }
+
+        private void buttonAppConfig_Click(object sender, RoutedEventArgs e)
+        {
+            ConfigWindow _configWindow = new ConfigWindow();
+            _configWindow.Show();
         }
     }
 }
