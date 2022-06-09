@@ -21,6 +21,6 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="buttonAppConfig" Content="временный конфиг" FontSize="16" Height="50" Opacity="1" Grid.Row="1" Click="buttonAppConfig_Click"/>
+        <Button x:Name="buttonAppConfig" Content="временный конфиг" FontSize="16" Height="50" Opacity="1" Grid.Row="1"/>
     </Grid>
 </Window>

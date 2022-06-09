@@ -20,8 +20,7 @@ namespace MacTep_9lpJIblkoB_2
 
         public string ErrorsDirectory { get; private set; }
 
-        public string MainBackgroundImage { get; set; }
-
+        public string StartBackgroundImagePath { get; private set; }
 
         private ConfigurationSingleton()
         {
@@ -30,6 +29,7 @@ namespace MacTep_9lpJIblkoB_2
             BackgroundDirectory = CheckPath(ImagesDirectory + @"\Backgrounds");
             LogsDirectory = CheckPath(AppPath + @"\Logs");
             ErrorsDirectory = CheckPath(LogsDirectory + @"\Errors");
+            StartBackgroundImagePath = BackgroundDirectory + @"\StartBackground.jpg";
 
         }
 

@@ -21,19 +21,13 @@ namespace MacTep_9lpJIblkoB_2
     public partial class MainWindow : Window
     {
 
-        private string[] _imagesBackgroundMass;
         private ConfigurationSingleton appConfig;
         public MainWindow()
         {
             InitializeComponent();
             appConfig = ConfigurationSingleton.GetConfiguration();
-            _imagesBackgroundMass = ImageFinder.FindAllImages(appConfig.BackgroundDirectory);
+            if (!ImageLoader.LoadBackgroundImage(appConfig.StartBackgroundImagePath, this)) MessageBox.Show("Не удалось установить стартовое изображение заднего фона");
         }
 
-        private void buttonAppConfig_Click(object sender, RoutedEventArgs e)
-        {
-            ConfigWindow _configWindow = new ConfigWindow();
-            _configWindow.Show();
-        }
     }
 }

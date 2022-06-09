@@ -9,7 +9,7 @@ namespace MacTep_9lpJIblkoB_2
     static class ImageLoader
     {
         /// <summary>
-        /// заливает изображение в Background объекта Control (возвращает true при успешном
+        /// заливает изображение в Background объекта Control (возвращает true при успехе, false при неудаче)
         /// </summary>
         /// <param name="_imagePath"></param>
         /// <param name="_control"></param>
@@ -17,7 +17,7 @@ namespace MacTep_9lpJIblkoB_2
         public static bool LoadBackgroundImage(string _imagePath, Control _control)
         {
             if (string.IsNullOrEmpty(_imagePath)) return false;
-            if (!Directory.Exists(_imagePath)) return false;
+            if (!File.Exists(_imagePath)) return false;
 
             try
             {
