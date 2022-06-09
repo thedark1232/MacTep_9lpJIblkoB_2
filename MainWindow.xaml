@@ -5,22 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MacTep_9lpJIblkoB_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Мастер ярлыков 2" Height="957" Width="1691" MinHeight="600" MinWidth="800"  WindowStartupLocation="CenterScreen" Background="black" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Icon="Folder-My-Documents-icon.png">
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="buttonAppConfig" Content="временный конфиг" FontSize="16" Height="50" Opacity="1" Grid.Row="1"/>
+
+        <!--глобальная кнопка выхода-->
+
+
+        <!--Стартовый экран-->
+        <Canvas Grid.Column="1" Grid.Row="1">
+            <StackPanel Canvas.Left="5" x:Name="LeftStartStackPanel" Canvas.Top="100">
+                <Button x:Name="Переплетка" Content="Переплетка" Style="{DynamicResource StartButtonsStyle}"/>
+                <Button x:Name="ОСЕ" Content="ОСЕ" Margin="0,40,0,0" Style="{DynamicResource StartButtonsStyle}"/>
+                <Button x:Name="Спецификация" Content="Спецификация" Margin="0,40,0,0" Style="{DynamicResource StartButtonsStyle}"/>
+                <Button x:Name="Контролеры" Content="Контролеры" Margin="0,40,0,0" Style="{DynamicResource StartButtonsStyle}"/>
+                <Button x:Name="Настройки" Content="Настройки" Margin="0,40,0,0" Style="{DynamicResource StartButtonsStyle}"/>
+            </StackPanel>
+            <StackPanel Canvas.Right="5" x:Name="RightStartStackPanel" Canvas.Top="100">
+                <Button x:Name="Адреса" Content="Адреса" Style="{DynamicResource StartButtonsStyle}"/>
+                <Button x:Name="Табель" Content="Табель" Margin="0,40,0,0" Style="{DynamicResource StartButtonsStyle}"/>
+                <Button x:Name="Водители" Content="Водители" Margin="0,40,0,0" Style="{DynamicResource StartButtonsStyle}"/>
+                <Button x:Name="Выбор_принтера" Content="Выбор принтера" Margin="0,40,0,0" Style="{DynamicResource StartButtonsStyle}"/>
+                <Button x:Name="Выход" Content="Выход" Margin="0,40,0,0" Style="{DynamicResource StartButtonsStyle}" Click="Выход_Click"/>
+            </StackPanel>
+        </Canvas>
+
     </Grid>
+
+
+
 </Window>

@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace MacTep_9lpJIblkoB_2
 {
+
+    /// <summary>
+    /// синглтон конфигурации всего приложения
+    /// </summary>
     class ConfigurationSingleton
     {
         private static ConfigurationSingleton appConfiguration;
@@ -39,7 +43,6 @@ namespace MacTep_9lpJIblkoB_2
             return appConfiguration;
         }
 
-        //проверка пути к папке, если отсутствует, значит создать папку
         private string CheckPath(string path)
         {
             if (string.IsNullOrEmpty(path))

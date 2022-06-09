@@ -29,5 +29,14 @@ namespace MacTep_9lpJIblkoB_2
             if (!ImageLoader.LoadBackgroundImage(appConfig.StartBackgroundImagePath, this)) MessageBox.Show("Не удалось установить стартовое изображение заднего фона");
         }
 
+        public static void appExit()
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Выход_Click(object sender, RoutedEventArgs e)
+        {
+            appExit();
+        }
     }
 }
